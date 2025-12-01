@@ -17,7 +17,18 @@ func _input(event: InputEvent) -> void:
 
 
 func _solve() -> void:
-	_measure.start()
 	var current_day: AocSolution = _solutions.back()
-	print("result: %s" % current_day.solve())
+
+	_measure.start()
+	print_result(current_day.solve())
 	_measure.finish()
+
+	if current_day.has_method("solve_part_2"):
+		print("--- part 2 ---")
+		_measure.start()
+		print_result(current_day.solve_part_2())
+		_measure.finish()
+
+
+func print_result(result: int) -> void:
+	print("result: " + str(result))
