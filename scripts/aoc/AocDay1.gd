@@ -7,7 +7,7 @@ func solve() -> int:
 	var result: int = 0
 
 	for line in lines:
-		rotation = wrapi(rotation + _get_rotation_change(line), 0, 100)
+		rotation = (rotation + _get_rotation_change(line)) % 100
 
 		if rotation == 0:
 			result += 1
@@ -27,8 +27,7 @@ func solve_part_2() -> int:
 
 		while remaining > 0:
 			remaining -= 1
-			rotation += sgn
-			rotation = wrapi(rotation, 0, 100)
+			rotation = (rotation + sgn) % 100
 
 			if rotation == 0:
 				result += 1

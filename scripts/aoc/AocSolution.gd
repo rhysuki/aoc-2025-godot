@@ -26,4 +26,4 @@ func load_input(day: int) -> String:
 
 
 func get_lines(day: int) -> PackedStringArray:
-	return load_input(day).split("\n")
+	return load_input(day).strip_edges().split("\n")
