@@ -3,11 +3,21 @@ class_name AocSolution
 
 static var input_path := "res://scripts/aoc/input"
 
+const NOT_IMPLEMENTED := -999
+
 var parent: Node
 
 
 func _init(p: Node) -> void:
 	self.parent = p
+
+
+func solve() -> int:
+	return NOT_IMPLEMENTED
+
+
+func solve_part_2() -> int:
+	return NOT_IMPLEMENTED
 
 
 func load_input(day: int) -> String:
