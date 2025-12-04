@@ -19,16 +19,15 @@ func _input(event: InputEvent) -> void:
 func _solve() -> void:
 	var current_day: AocSolution = _solutions.back()
 
-	_measure.start()
-	print_result(current_day.solve())
-	_measure.finish()
-
-	if current_day.has_method("solve_part_2"):
-		print("--- part 2 ---")
-		_measure.start()
-		print_result(current_day.solve_part_2())
-		_measure.finish()
+	print("--- part 1 ---")
+	_measure.measure_function(func(): print_result(current_day.solve()))
+	print("--- part 2 ---")
+	_measure.measure_function(func(): print_result(current_day.solve_part_2()))
 
 
 func print_result(result: int) -> void:
+	if result == AocSolution.NOT_IMPLEMENTED:
+		print("(not implemented)")
+		return
+
 	print("result: " + str(result))
