@@ -32,6 +32,10 @@ window/stretch/scale_mode="integer"
 
 project/assembly_name="goat_platformer_gdscript"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [global_group]
 
 swingable=""

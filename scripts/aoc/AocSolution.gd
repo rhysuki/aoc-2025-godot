@@ -5,12 +5,6 @@ static var input_path := "res://scripts/aoc/input"
 
 const NOT_IMPLEMENTED := -999
 
-var parent: Node
-
-
-func _init(p: Node) -> void:
-	self.parent = p
-
 
 func solve() -> int:
 	return NOT_IMPLEMENTED

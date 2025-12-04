@@ -3,9 +3,9 @@ extends Node2D
 
 @onready var _measure: MeasureTime = $MeasureTime
 var _solutions: Array[AocSolution] = [
-	AocDay1.new(self),
-	AocDay2.new(self),
-	AocDay3.new(self),
+	AocDay1.new(),
+	AocDay2.new(),
+	AocDay3.new(),
 ]
 
 
