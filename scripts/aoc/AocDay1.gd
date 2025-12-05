@@ -2,7 +2,7 @@ class_name AocDay1 extends AocSolution
 
 
 func solve() -> int:
-	var lines = get_lines(1)
+	var lines = Util.get_lines(load_input(1))
 	var rotation: int = 50
 	var result: int = 0
 
@@ -16,7 +16,7 @@ func solve() -> int:
 
 
 func solve_part_2() -> int:
-	var lines = get_lines(1)
+	var lines = Util.get_lines(load_input(1))
 	var rotation: int = 50
 	var result: int = 0
 

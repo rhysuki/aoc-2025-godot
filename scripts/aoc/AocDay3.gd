@@ -3,7 +3,7 @@ class_name AocDay3 extends AocSolution
 
 func solve() -> int:
 	var result := 0
-	var lines := get_lines(3)
+	var lines := Util.get_lines(load_input(3))
 
 	for line in lines:
 		var numbers := Array(line.split()) \

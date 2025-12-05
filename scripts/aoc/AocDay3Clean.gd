@@ -4,11 +4,7 @@ class_name AocDay3Clean extends AocSolution
 func solve() -> int:
 	return Array(get_lines(3)) \
 		.map(get_joltage) \
-		.reduce(sum, 0)
-
-
-func sum(accum, number):
-	return accum + number
+		.reduce(Util.sum, 0)
 
 
 func get_joltage(line: String) -> int:
@@ -24,8 +20,8 @@ func to_int(s: String) -> int:
 	return int(s)
 
 
-func concatenate_digits(a: int, b: int) -> int:
-	return a * 10 + b
+func concatenate_digits(tens: int, ones: int) -> int:
+	return tens * 10 + ones
 
 
 func find_max_value_index(numbers: Array) -> int:

@@ -1,4 +1,4 @@
-extends Node
+class_name Util
 
 ## Ye Who Enter Here
 ##
@@ -35,20 +35,17 @@ extends Node
 ## 18. subclasses
 
 
-## The duration of a single frame, in miliseconds, when the game's running at
-## 60fps. Useful for when something lasts a set amount of frames.
-const FRAME_TIME: float = 0.01666666
-
-var elapsed: float = 0.0
-
-
-func _process(delta):
-	elapsed += delta
-
-
 ## A wrapper around `load()` that errors if the filepath isn't found.
 static func safe_load(path: String) -> Resource:
 	if not ResourceLoader.exists(path):
 		printerr("Couldn't find file: " + path)
 
 	return load(path)
+
+
+static func sum(a, b):
+	return a + b
+
+
+static func get_lines(string: String) -> Array:
+	return string.strip_edges().split("\n")
