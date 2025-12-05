@@ -1,13 +1,6 @@
 extends GutTest
 
 
-class TestSolve:
-	extends GutTest
-
-	func test_solve():
-		assert_eq(AocDay4.new().solve(), 13)
-
-
 class TestToDigitArray:
 	extends GutTest
 
