@@ -48,4 +48,4 @@ static func sum(a, b):
 
 
 static func get_lines(string: String) -> Array:
-	return string.strip_edges().split("\n")
+	return Array(string.strip_edges().split("\n"))

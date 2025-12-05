@@ -2,7 +2,7 @@ class_name AocDay3Clean extends AocSolution
 
 
 func solve() -> int:
-	return Array(get_lines(3)) \
+	return Util.get_lines(load_input((3))) \
 		.map(get_joltage) \
 		.reduce(Util.sum, 0)
 

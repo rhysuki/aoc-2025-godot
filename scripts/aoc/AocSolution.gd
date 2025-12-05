@@ -27,3 +27,7 @@ func load_input(day: int, type: PuzzleInputType = PuzzleInputType.NORMAL) -> Str
 		path = "%s/day_%d_example.txt" % [input_path, day]
 
 	return FileAccess.open(path, FileAccess.READ).get_as_text()
+
+
+func get_lines(day: int, type = 0) -> Array:
+	return Util.get_lines(load_input(day, type))

@@ -5,7 +5,7 @@ class TestSolve:
 	extends GutTest
 
 	func test_solve():
-		assert_eq(AocDay3Clean.new().solve(), 17321)
+		assert_eq(AocDay4.new().solve(), 13)
 
 
 class TestToDigitArray:
