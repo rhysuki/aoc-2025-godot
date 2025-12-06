@@ -7,6 +7,7 @@ var _solutions: Array[AocSolution] = [
 	AocDay2.new(),
 	AocDay3.new(),
 	AocDay4.new(),
+	AocDay5.new(),
 ]
 
 

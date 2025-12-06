@@ -59,6 +59,17 @@ class Map:
 		return result
 
 
+	func count_neighboring_cells(row: int, column: int) -> int:
+		var result := 0
+
+		for current_row in range(row - 1, row + 2):
+			for current_column in range(column - 1, column + 2):
+				if is_cell_occupied(current_row, current_column):
+					result += 1
+
+		return result
+
+
 	func is_cell_accessible(row: int, column: int) -> bool:
 		return is_cell_occupied(row, column) and get_neighboring_cells(row, column).count(true) < 5
 

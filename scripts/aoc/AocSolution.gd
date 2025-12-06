@@ -10,15 +10,8 @@ const NOT_IMPLEMENTED := -999
 
 static var input_path := "res://scripts/aoc/input"
 
-func solve() -> int:
-	return NOT_IMPLEMENTED
 
-
-func solve_part_2() -> int:
-	return NOT_IMPLEMENTED
-
-
-func load_input(day: int, type: PuzzleInputType = PuzzleInputType.NORMAL) -> String:
+static func load_input(day: int, type: PuzzleInputType = PuzzleInputType.NORMAL) -> String:
 	var path: String
 
 	if type == PuzzleInputType.NORMAL:
@@ -29,5 +22,12 @@ func load_input(day: int, type: PuzzleInputType = PuzzleInputType.NORMAL) -> Str
 	return FileAccess.open(path, FileAccess.READ).get_as_text()
 
 
-func get_lines(day: int, type = 0) -> Array:
+static func get_lines(day: int, type = 0) -> Array:
 	return Util.get_lines(load_input(day, type))
+
+func solve() -> int:
+	return NOT_IMPLEMENTED
+
+
+func solve_part_2() -> int:
+	return NOT_IMPLEMENTED
