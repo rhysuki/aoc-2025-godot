@@ -51,4 +51,30 @@ func new_fresh_range(s: String) -> Array:
 
 
 func solve_part_2() -> int:
-	return 0
+	var result := 0
+	var lines := get_lines(5)
+	var merged_ranges = merge_ranges(get_fresh_ranges(lines))
+
+	for r in merged_ranges:
+		result += r[1] - r[0] + 1
+
+	return result
+
+
+func merge_ranges(ranges: Array) -> Array:
+	# i didn't know how to do this
+	# taken from:
+	# https://www.geeksforgeeks.org/dsa/merging-intervals/
+	var sorted = ranges.duplicate_deep()
+	sorted.sort_custom(func(a, b): return a[0] < b[0])
+	var result := [sorted[0]]
+
+	for current in sorted:
+		var last = result.back()
+
+		if current[0] <= last[1]:
+			last[1] = max(current[1], last[1])
+		else:
+			result.append(current)
+
+	return result
