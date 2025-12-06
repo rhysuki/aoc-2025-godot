@@ -47,5 +47,9 @@ static func sum(a, b):
 	return a + b
 
 
+static func to_int(n: String) -> int:
+	return int(n)
+
+
 static func get_lines(string: String) -> Array:
 	return Array(string.strip_edges().split("\n"))

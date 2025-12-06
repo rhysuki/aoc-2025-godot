@@ -9,7 +9,7 @@ class TestAocDay5:
 		solution = AocDay5.new()
 
 	func test_solve():
-		assert_eq(AocDay5.new().solve(), 3)
+		assert_eq(AocDay5.new().solve(), 789)
 
 
 	func test_range():

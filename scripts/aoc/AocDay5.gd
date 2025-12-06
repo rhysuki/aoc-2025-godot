@@ -2,24 +2,39 @@ class_name AocDay5 extends AocSolution
 
 
 func solve() -> int:
-	var result := 0
 	var lines := get_lines(5)
-	var ranges := []
-	var ids := []
-	var fresh := []
+	return count_fresh_ids(get_ids(lines), get_fresh_ranges(lines))
 
-	for line: String in lines:
-		if line.contains("-"):
-			ranges.append(new_fresh_range(line))
-		else:
-			ids.append(int(line))
 
-	for id in ids:
-		for fresh_range in ranges:
-			if is_in_range(id, fresh_range[0], fresh_range[1]):
-				if not id in fresh:
-					result += 1
-					fresh.append(id)
+func count_fresh_ids(ids, fresh_ranges):
+	return get_fresh_ids(ids, fresh_ranges).size()
+
+
+func get_fresh_ranges(lines: Array) -> Array:
+	return lines.filter(func(l: String): return l.contains("-")) \
+		.map(new_fresh_range)
+
+
+func get_ids(lines: Array) -> Array:
+	return lines.filter(func(l: String): return not l.contains("-")) \
+		.map(Util.to_int)
+
+
+func get_fresh_ids(ids: Array, fresh_ranges: Array) -> Array:
+	var result := []
+
+	for fresh_range in fresh_ranges:
+		result += ids.filter(func(id): return is_in_range(id, fresh_range[0], fresh_range[1]))
+
+	return remove_duplicates(result)
+
+
+func remove_duplicates(arr: Array) -> Array:
+	var result := []
+
+	for element in arr:
+		if not element in result:
+			result.append(element)
 
 	return result
 
