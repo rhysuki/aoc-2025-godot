@@ -51,14 +51,12 @@ func new_fresh_range(s: String) -> Array:
 
 
 func solve_part_2() -> int:
-	var result := 0
-	var lines := get_lines(5)
-	var merged_ranges = merge_ranges(get_fresh_ranges(lines))
+	return merge_ranges(get_fresh_ranges(get_lines(5))) \
+		.reduce(func(acc, r): return acc + count_ids_in_range(r), 0)
 
-	for r in merged_ranges:
-		result += r[1] - r[0] + 1
 
-	return result
+func count_ids_in_range(fresh_range: Array) -> int:
+	return fresh_range[1] - fresh_range[0] + 1
 
 
 func merge_ranges(ranges: Array) -> Array:

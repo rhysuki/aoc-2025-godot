@@ -5,11 +5,17 @@ class TestAocDay5:
 
 	var solution: AocDay5
 
+
 	func before_all():
 		solution = AocDay5.new()
 
+
 	func test_solve():
 		assert_eq(AocDay5.new().solve(), 789)
+
+
+	func test_solve_part_2():
+		assert_eq(AocDay5.new().solve_part_2(), 343329651880509)
 
 
 	func test_range():
