@@ -47,6 +47,10 @@ static func sum(a, b):
 	return a + b
 
 
+static func mult(a, b):
+	return a * b
+
+
 static func to_int(n: String) -> int:
 	return int(n)
 

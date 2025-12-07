@@ -36,5 +36,5 @@ func solve_part_2() -> int:
 	return NOT_IMPLEMENTED
 
 
-func print_to_label(text: String) -> void:
-	printed.emit(text)
+func print_to_label(text: Variant) -> void:
+	printed.emit(str(text))
