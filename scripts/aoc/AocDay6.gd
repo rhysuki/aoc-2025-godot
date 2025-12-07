@@ -2,25 +2,9 @@ class_name AocDay6 extends AocSolution
 
 
 func solve() -> int:
-	var result := 0
-	var lines = get_lines(6)
-	var values := lines.map(get_values)
+	var values = get_lines(6).map(get_values)
 	var collected := collect_values(values)
-
-	var streak := []
-
-	for item in collected:
-		if item == "*":
-			result += streak.map(Util.to_int).reduce(Util.mult)
-			streak.clear()
-		elif item == "+":
-			result += streak.map(Util.to_int).reduce(Util.sum)
-			streak.clear()
-		else:
-			streak.append(item)
-
-
-	return result
+	return get_solutions(collected).reduce(Util.sum)
 
 
 func get_values(line: String) -> Array:
@@ -41,3 +25,24 @@ func collect_values(values: Array) -> Array:
 			result.append(values[j][i])
 
 	return result
+
+
+func get_solutions(sheet: Array) -> Array:
+	var result := []
+	var equation := []
+
+	for item in sheet:
+		if item == "*":
+			result.append(reduce_equation(equation, Util.mult))
+			equation.clear()
+		elif item == "+":
+			result.append(reduce_equation(equation, Util.sum))
+			equation.clear()
+		else:
+			equation.append(item)
+
+	return result
+
+
+func reduce_equation(streak: Array, fn: Callable) -> int:
+	return streak.map(Util.to_int).reduce(fn)
