@@ -6,7 +6,7 @@ var window_scale: int = 1
 
 
 func _ready():
-	set_window_scale(1)
+	set_window_scale(2)
 
 
 func _process(_delta):

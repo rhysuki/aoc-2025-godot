@@ -1,6 +1,8 @@
 class_name AocSolution
 
 
+signal printed(text: String)
+
 enum PuzzleInputType {
 	NORMAL,
 	EXAMPLE,
@@ -25,9 +27,14 @@ static func load_input(day: int, type: PuzzleInputType = PuzzleInputType.NORMAL)
 static func get_lines(day: int, type = 0) -> Array:
 	return Util.get_lines(load_input(day, type))
 
+
 func solve() -> int:
 	return NOT_IMPLEMENTED
 
 
 func solve_part_2() -> int:
 	return NOT_IMPLEMENTED
+
+
+func print_to_label(text: String) -> void:
+	printed.emit(text)
